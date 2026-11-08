@@ -1,0 +1,35 @@
+{
+  "name": "page-ai",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": "^24.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint && pnpm depcruise",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:integration": "turbo run test:integration",
+    "test:guards": "node packages/config/check-test-guards.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky",
+    "depcruise": "depcruise apps packages eval",
+    "scenarios:selftest": "node eval/scripts/selftest.ts",
+    "db:up": "docker compose up -d --wait postgres",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@page/config": "workspace:*",
+    "dependency-cruiser": "^18.7.0",
+    "husky": "^9.1.7",
+    "prettier": "catalog:",
+    "turbo": "^2.11.10",
+    "typescript": "catalog:"
+  }
+}

@@ -1,5 +1,7 @@
 # demo-app
 
+Live check of the Tier 2 host tools. Close without merging.
+
 The Next.js + Postgres shop that PageAgents treats as production. Seeded bugs break it on
 four surfaces: pages (frontend), `/api/*` route handlers (backend), SQL and constraints
 (database), and env settings in `src/config.ts` (config).
